@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header { /*trying my best to make the header look clean*/
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+header h1 { /*Making text large enough for the header*/
+    font-size: 2.5rem;
+}
+
+main {
+    flex: 1;
+    padding: 2rem 0;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.gallery-item {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    
+}
+
+.gallery-item a {
+    display: block; /*This would let the entire item be clickable for easier navigation*/
+    text-decoration: none;
+}
+
+.gallery-item img {
+    width: 100%; /*Allows the image that would be in the gallery block to fill 100% of the container*/
+    height: 200px;
+    object-fit: cover; /*If item is too big for container, it'll crop it if necessary and look nicer.*/
+    display: block;
+}
+
+.gallery-item p {
+    padding: 1rem;
+    font-size: 1rem;
+    color: #555; /*Text describing the gallery set to a gray color to offset the white background for readability*/
+}
+
+.bottom-image {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto; /*Centers the picture horizontally for optimal viewing*/
+    text-align: center;
+    padding: 1rem;
+}
+
+.bottom-image img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+
+.single-image {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 910px; 
+    margin: 0 auto;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.single-image img {
+    width: 100%;
+    height: auto;
+    max-width: 910px;
+    object-fit: contain;
+    display: block;
+}
+
+.single-image p {
+    padding: 1.5rem 0;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+nav li {
+    margin: 0 1rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .bottom-image {
+        max-width: 90%;
+    }
+
+    .single-image {
+        max-width: 90%;
+        padding: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 0.5rem 0;
+    }
+}
